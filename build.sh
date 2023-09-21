@@ -3,6 +3,7 @@ pip freeze > requirements.txt
 pip install Django
 pip install dj-database-url
 pip install python-dotenv
+pip install django-cors-headers
 python3 -m venv venv
 source venv/bin/activate
 
