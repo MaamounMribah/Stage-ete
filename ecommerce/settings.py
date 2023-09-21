@@ -18,6 +18,8 @@ from dotenv import load_dotenv
 import mimetypes
 
 mimetypes.add_type("text/css", ".css", True)
+mimetypes.add_type("text/javascript", ".js", True)
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
