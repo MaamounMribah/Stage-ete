@@ -2,7 +2,7 @@
 pip freeze > requirements.txt
 pip install Django
 pip install dj-database-url
-pip install dotenv
+pip install python-dotenv
 python3 -m venv venv
 source venv/bin/activate
 
