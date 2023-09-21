@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-
+pip freeze > requirements.txt
 pip install Django
+pip install dj-database-url
 python3 -m venv venv
 source venv/bin/activate
-pip freeze > requirements.txt
+
 pip install -r requirements.txt
 
 python3 manage.py collectstatic --no-input
