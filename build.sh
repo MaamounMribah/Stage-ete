@@ -4,6 +4,8 @@ pip install Django
 pip install dj-database-url
 pip install python-dotenv
 pip install django-cors-headers
+pip install psycopg2 -U
+
 python3 -m venv venv
 source venv/bin/activate
 
