@@ -56,12 +56,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'store.apps.StoreConfig',
     'members',
-    'cors-headers',
+    'corsheaders',
     'store'
 ]
 
 MIDDLEWARE = [
-    'cors-headers.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
