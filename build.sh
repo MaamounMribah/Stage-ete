@@ -7,7 +7,7 @@ pip install django-cors-headers
 pip install psycopg2 -U
 pip install gunicorn
 python3 -m pip install Pillow
-
+export DJANGO_SETTINGS_MODULE=ecommerce.settings
 python3 -m venv venv
 source venv/bin/activate
 
