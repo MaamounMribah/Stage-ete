@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecommerce
+    volumes:
+      - .:/ecommerce
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    environment:
+      #- ALLOWED_HOSTS=*
+      - POSTGRES_USERNAME=maamoun
+      - POSTGRES_PASSWORD=123123
+      - POSTGRES_HOSTNAME_DEFAULT=localhost
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB_NAME=ecommerce
+      #- DATABASE_URL=postgres://stage_imtk_user:wD5Po0Y7ihlI6qhV4Jb34QaCnVLzhPON@dpg-ck5kmltdrqvc73ehkqdg-a.oregon-postgres.render.com/stage_imtk
+      - DEBUG=1
+      - DJANGO_SUPERUSER_EMAIL=admin@admin.com
+      - DJANGO_SUPERUSER_PASSWORD=123123
+      - DJANGO_SUPERUSER_USERNAME=admin2
+      - PYTHON_VERSION= 3.3.0
+      - SECRET_KEY=388a6e00744a0a33a727bdd25b523867
+    command: bash -c "sh build.sh  && python manage.py runserver 0.0.0.0:8000"
+
+  database:
+    image: "postgres"
+    environment:
+      - POSTGRES_DB=ecommerce
+      - POSTGRES_USER=maamoun
+      - POSTGRES_PASSWORD=123123
+      #- POSTGRES_HOST=database
+      #- DATABASE_PORT=5432
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+networks:
+  elastic:
+    driver: bridge
+volumes:
+  database-data:
