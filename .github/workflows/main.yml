@@ -3,7 +3,6 @@ name : Automate build, test, deploy of django app
 on:
   push:
     branches:
-      - main
       - master
 
 jobs:
